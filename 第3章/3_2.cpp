@@ -20,7 +20,7 @@ int main(){
     double sum;
     double temp;
     char ch;
-    bool isRepeat = false;
+    bool isRepeat = false; //是为了解决while(isdigit(s[i]))中导致的两次i++等问题
     while(scanf("%s",s)){
         sum = 0;
         isRepeat = false;
@@ -32,7 +32,7 @@ int main(){
             }
             while(isdigit(s[i])){
                 temp *= 10;
-                temp += (s[i++] - '0');
+                temp += (s[i++] - '0'); //曾经犯了一个错误，写成(s[i++] - 0)。
                 isRepeat = true;
             }
             if(isRepeat){
