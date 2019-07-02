@@ -8,15 +8,10 @@
 using namespace std;
 
 char b[maxn];
-
-void swap1(char& a,char& b){
-    char temp = a;
-    a = b;
-    b = temp;
-}
+char a[5][5];
 
 int main(){
-    char a[5][5];
+
     int tmpi,tmpj;
     for(int i = 0;i < 5;i ++){
         for(int j = 0;j < 5;j ++){
@@ -41,7 +36,7 @@ int main(){
                     printf("This puzzle has no final configuration!");
                     isTrue = true;
                 }
-                swap1(a[tmpi][tmpj],a[tmpi - 1][tmpj]);
+                swap(a[tmpi][tmpj],a[tmpi - 1][tmpj]);
                 tmpi --;
                 break;
             case 'B':
@@ -49,7 +44,7 @@ int main(){
                     printf("This puzzle has no final configuration!");
                     isTrue = true;
                 }
-                swap1(a[tmpi][tmpj],a[tmpi + 1][tmpj]);
+                swap(a[tmpi][tmpj],a[tmpi + 1][tmpj]); //实在搞不明白当tmpi = 0时,a[++tmpi][tmpj]修改的依旧是a[0][tmpj]的值。
                 tmpi ++;
                 break;
             case 'L':
@@ -57,7 +52,7 @@ int main(){
                     printf("This puzzle has no final configuration!");
                     isTrue = true;
                 }
-                swap1(a[tmpi][tmpj],a[tmpi][tmpj - 1]);
+                swap(a[tmpi][tmpj],a[tmpi][tmpj - 1]);
                 tmpj --;
                 break;
             case 'R':
@@ -65,8 +60,8 @@ int main(){
                     printf("This puzzle has no final configuration!");
                     isTrue = true;
                 }
-                swap1(a[tmpi][tmpj],a[tmpi][tmpj + 1]);
-                tmpj ++;
+                swap(a[tmpi][tmpj],a[tmpi][tmpj + 1]);
+                tmpj++;
                 break;
             case '0':
                 break;
