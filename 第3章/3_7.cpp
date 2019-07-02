@@ -9,12 +9,11 @@
  * 1、2、3三种序列中第一个字母应该选择T。
  */
 
-
+char a[51][1001];
 int b[201];
 
 char chr[1001];
 int main(){
-    char a[51][51];
     int m,n;
     char ch;
     while(scanf("%d%d",&m,&n)){
