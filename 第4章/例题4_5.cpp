@@ -13,15 +13,6 @@ char buf[maxn];
 
 #define BIG 100
 
-void printd(int r,int c){
-    for(int i = 1;i <= r;i ++){
-        for(int j = 1;j <= c;j++){
-            printf("%d ",d[i][j]);
-        }
-        printf("\n");
-    }
-}
-
 void del(char ch,int &r,int &c){
     int n;
     scanf("%d",&n);
@@ -126,8 +117,8 @@ int main(){
         }
         memset(ans,0,sizeof(ans));
         scanf("%d",&n);
-        for(int i = 0;i < maxn;i ++){
-            for(int j = 0;j < maxn;j ++){
+        for(int i = 1;i <= r;i ++){
+            for(int j = 1;j <= c;j ++){
                 ans[d[i][j] / BIG][d[i][j] % BIG] = i * BIG + j;
                 //i * BIG + j可以推出ans[d[i][j] / BIG][d[i][j] % BIG]现在的位置
                 //d[i][j]里面的值(原来的i和原来的j经计算得出的值)可以推出原来所在的位置
@@ -139,7 +130,7 @@ int main(){
             scanf("%d%d",&tmpr,&tmpc);
             printf("Cell(%d,%d)",tmpr,tmpc);
             if(ans[tmpr][tmpc] == 0) printf("Is Gone!\n");
-            else printf("has moved to(%d,%d)",ans[tmpr][tmpc] / BIG,ans[tmpr][tmpc] % BIG);
+            else printf("has moved to(%d,%d)\n",ans[tmpr][tmpc] / BIG,ans[tmpr][tmpc] % BIG);
         }
     }
     return 0;
