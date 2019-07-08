@@ -1,3 +1,6 @@
+/**
+  * (1 << i) & num 等价于num的二进制的第i个数
+  */
 #include<stdio.h>
 #include<iostream>
 using namespace std;
