@@ -8,7 +8,9 @@
   * 这样我总是不能在a[f...l]找不到后序序列b[l];
   * 后来我打算用L1,L2,R1,R2来表示，发现依旧是这个情况
   * 然后我发现需要统计左子树的节点个数
-  *
+  * 于是就有了下面这个公式：
+  * T->left = buildTree(T->left,L1,mid - 1,R1,R1 + cnt - 1);
+  * T->right = buildTree(T->right,mid + 1,L2,R1 + cnt,R2 - 1);
   */
 
 
